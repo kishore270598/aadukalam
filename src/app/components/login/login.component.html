@@ -1,0 +1,43 @@
+<section class="bg-gray-50"></section>
+<div class="flex flex-col items-center justify-center h-screen">
+  <div class="login-container">
+    <div class="p-6 space-y-6">
+      <h1 class="title">Log in to your account</h1>
+      <div *ngIf="isError" class="error-message">
+        The Username or Password is Wrong
+      </div>
+      <form
+        #loginForm="ngForm"
+        (ngSubmit)="onSubmit(loginForm.value)"
+        class="space-y-6"
+      >
+        <div>
+          <label class="label">Username</label>
+          <input
+            ngModel
+            type="text"
+            name="username"
+            placeholder="Enter your username"
+            class="input-field"
+            required
+          />
+        </div>
+        <div>
+          <label class="label">Password</label>
+          <input
+            ngModel
+            type="password"
+            name="password"
+            placeholder="************"
+            class="input-field"
+            required
+          />
+        </div>
+        <button type="submit" class="button">Sign in</button>
+      </form>
+      <p class="signup-link">
+        <button class="button" (click)="onSignup()">New User?Sign Up</button>
+      </p>
+    </div>
+  </div>
+</div>
