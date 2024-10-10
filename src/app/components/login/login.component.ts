@@ -10,13 +10,12 @@ import { LoginService } from '../../login.service';
   imports: [SignUpComponent, NgIf, FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
+  providers: [LoginService],
 })
 export class LoginComponent {
   isError: boolean = false;
   constructor(private router: Router, private service: LoginService) {}
-  onSubmit(values: any) {
-    console.log(this.service.login(values.username, values.password));
-  }
+  onSubmit(values: any) {}
   onSignup() {
     console.log('Yes! signup');
     this.router.navigate(['/sign-up']);

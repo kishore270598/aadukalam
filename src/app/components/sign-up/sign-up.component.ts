@@ -10,10 +10,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   imports: [FormsModule, NgIf, ReactiveFormsModule],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css',
+  providers: [LoginService],
 })
 export class SignUpComponent {
   signupForm: FormGroup;
-
   constructor(private fb: FormBuilder) {
     this.signupForm = this.fb.group(
       {
@@ -42,6 +42,7 @@ export class SignUpComponent {
       // Handle user signup logic here, e.g., sending data to a backend API
       const signupData = this.signupForm.value;
       console.log('Signup successful', signupData);
+
       // You can perform additional actions such as calling an API service
     } else {
       console.log('Form is invalid');
