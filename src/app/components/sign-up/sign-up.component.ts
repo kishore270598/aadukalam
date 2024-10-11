@@ -14,7 +14,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class SignUpComponent {
   signupForm: FormGroup;
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private loginService: LoginService) {
     this.signupForm = this.fb.group(
       {
         name: ['', [Validators.required]],
@@ -35,6 +35,12 @@ export class SignUpComponent {
     const confirmPassword = form.get('confirmPassword')?.value;
     return password === confirmPassword ? null : { passwordMismatch: true };
   }
+  verify() {
+    console.log('verify');
+    this.loginService.verify().subscribe((data) => {
+      console.log(data);
+    });
+  }
 
   // Handles form submission
   onSubmit() {
@@ -42,7 +48,31 @@ export class SignUpComponent {
       // Handle user signup logic here, e.g., sending data to a backend API
       const signupData = this.signupForm.value;
       console.log('Signup successful', signupData);
-
+      console.log(this.signupForm);
+      const user_data: {
+        name: string;
+        username: string;
+        password: string;
+        phoneNumber: string;
+      } = {
+        name: this.signupForm.value.name,
+        username: this.signupForm.value.username,
+        password: this.signupForm.value.password,
+        phoneNumber: this.signupForm.value.phoneNo,
+      };
+      this.loginService.signup(user_data).subscribe(
+        (response: any) => {
+          // Handle the response, which should include a value and token
+          const token = response.token;
+          const value = response.value;
+          console.log('Token:', token);
+          console.log('Value:', value);
+          console.log('SIGNUP SUCCESS');
+        },
+        (error: any) => {
+          console.error('Signup failed', error);
+        }
+      );
       // You can perform additional actions such as calling an API service
     } else {
       console.log('Form is invalid');

@@ -18,7 +18,7 @@ export class LoginService {
     phoneNumber: string;
   }): Observable<any> {
     // Define the API endpoint
-    const url = `${this.base_url}/signup`;
+    const url = `${this.base_url}/auth/signup`;
 
     // Headers are disabled, so no need to add them
     const httpOptions = {
@@ -29,5 +29,9 @@ export class LoginService {
 
     // Make the POST request with the body passed from the component
     return this.http.post(url, userData, httpOptions);
+  }
+  verify() {
+    console.log('verify');
+    return this.http.get(this.base_url);
   }
 }
