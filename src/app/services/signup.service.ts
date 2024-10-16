@@ -50,5 +50,4 @@ export class Signupservice {
 
     return throwError(errorMessage);
   }
-  //------------------------------------------------------------------------------------
 }

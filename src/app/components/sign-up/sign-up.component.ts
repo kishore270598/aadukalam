@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from '../../login.service';
+import { Signupservice } from '../../services/signup.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-sign-up',
@@ -10,11 +10,17 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   imports: [FormsModule, NgIf, ReactiveFormsModule],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css',
-  providers: [LoginService],
+  providers: [Signupservice],
 })
 export class SignUpComponent {
   signupForm: FormGroup;
-  constructor(private fb: FormBuilder, private loginService: LoginService) {
+  isError: boolean = false;
+  ErrorMessage: string = ' ';
+  constructor(
+    private fb: FormBuilder,
+    private SignupService: Signupservice,
+    private router: Router
+  ) {
     this.signupForm = this.fb.group(
       {
         name: ['', [Validators.required]],
@@ -35,12 +41,6 @@ export class SignUpComponent {
     const confirmPassword = form.get('confirmPassword')?.value;
     return password === confirmPassword ? null : { passwordMismatch: true };
   }
-  verify() {
-    console.log('verify');
-    this.loginService.verify().subscribe((data) => {
-      console.log(data);
-    });
-  }
 
   // Handles form submission
   onSubmit() {
@@ -60,17 +60,19 @@ export class SignUpComponent {
         password: this.signupForm.value.password,
         phoneNumber: this.signupForm.value.phoneNo,
       };
-      this.loginService.signup(user_data).subscribe(
+      this.SignupService.signup(user_data).subscribe(
         (response: any) => {
           // Handle the response, which should include a value and token
+          this.isError = true;
           const token = response.token;
           const value = response.value;
-          console.log('Token:', token);
-          console.log('Value:', value);
           console.log('SIGNUP SUCCESS');
+          this.router.navigate(['/login']);
         },
         (error: any) => {
-          console.error('Signup failed', error);
+          this.ErrorMessage = error;
+          this.isError = true;
+          console.error(this.ErrorMessage);
         }
       );
       // You can perform additional actions such as calling an API service

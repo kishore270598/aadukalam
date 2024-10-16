@@ -1,8 +1,10 @@
-<button type="button" (click)="verify()">verify</button>
 <div class="signup-form-container">
   <h2>Sign Up</h2>
   <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
+      <div *ngIf="isError" class="error-message">
+        {{ ErrorMessage }}
+      </div>
       <label for="name">Name</label>
       <input
         type="text"
