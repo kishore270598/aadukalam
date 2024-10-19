@@ -1,3 +1,4 @@
+import { NavbarComponent } from '../navbar/navbar.component';
 import { LoginService } from './../../services/login.service';
 import { Component } from '@angular/core';
 import { SignUpComponent } from '../sign-up/sign-up.component';
@@ -8,7 +9,13 @@ import { UserPageComponent } from '../user-page/user-page.component';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [SignUpComponent, NgIf, FormsModule, UserPageComponent],
+  imports: [
+    SignUpComponent,
+    NgIf,
+    FormsModule,
+    UserPageComponent,
+    NavbarComponent,
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
   providers: [LoginService],
@@ -31,6 +38,7 @@ export class LoginComponent {
         this.isError = false;
         const token = response.token;
         localStorage.setItem('token', token);
+        localStorage.setItem('logged', 'true');
         console.log('login SUCCESS', token);
         this.router.navigate(['/app-user-page']);
       },

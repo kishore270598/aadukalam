@@ -1,0 +1,45 @@
+/* Navbar styles */
+.navbar {
+  background-color: white;
+  border: 2px solid #1f2937; /* border-gray-900 */
+  padding: 1rem 1.5rem; /* Increase padding for larger overall size */
+  border-radius: 0.375rem; /* rounded */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* System fonts */
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the content */
+  position: relative; /* Make the container relative for absolute positioning */
+}
+
+/* Center the navbar-brand title */
+.navbar-brand {
+  font-size: 25px; /* Increase text size (2.2rem = 35px) */
+  font-weight: 600; /* Bold font (600 for better visual balance) */
+  color: black;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  letter-spacing: 1px; /* Add some spacing between letters */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* System font */
+}
+
+/* Right-align the logout button */
+.logout-btn {
+  background-color: #1f2937; /* bg-gray-950 */
+  color: white;
+  border-radius: 0.5rem; /* rounded-lg */
+  font-size: 1.1rem; /* Slightly increase text size */
+  font-weight: 500; /* Semi-bold for better readability */
+  padding: 1rem 2rem; /* Increase button size (larger padding) */
+  position: absolute;
+  right: 0; /* Align to the right */
+  letter-spacing: 0.5px; /* Add slight letter-spacing for better appearance */
+}
+
+.logout-btn:hover {
+  background-color: #111827; /* darker shade on hover */
+}

@@ -4,10 +4,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Signupservice } from '../../services/signup.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NavbarComponent } from '../navbar/navbar.component';
 @Component({
   selector: 'app-sign-up',
   standalone: true,
-  imports: [FormsModule, NgIf, ReactiveFormsModule],
+  imports: [FormsModule, NavbarComponent, NgIf, ReactiveFormsModule],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css',
   providers: [Signupservice],
