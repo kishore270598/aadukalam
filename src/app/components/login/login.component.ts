@@ -5,7 +5,8 @@ import { SignUpComponent } from '../sign-up/sign-up.component';
 import { NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserPageComponent } from '../user-page/user-page.component';
+import { LayoutComponent } from '../layout/layout.component';
+import { HomepageComponent } from '../homepage/homepage.component';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -13,8 +14,9 @@ import { UserPageComponent } from '../user-page/user-page.component';
     SignUpComponent,
     NgIf,
     FormsModule,
-    UserPageComponent,
     NavbarComponent,
+    LayoutComponent,
+    HomepageComponent,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
@@ -39,8 +41,9 @@ export class LoginComponent {
         const token = response.token;
         localStorage.setItem('token', token);
         localStorage.setItem('logged', 'true');
-        console.log('login SUCCESS', token);
-        this.router.navigate(['/app-user-page']);
+        this.router.navigate(['app-layout'], {
+          queryParams: { username: values.username },
+        });
       },
       (error: any) => {
         this.ErrorMessage = error;
@@ -51,7 +54,6 @@ export class LoginComponent {
     // You can perform additional actions such as calling an API service
   }
   onSignup() {
-    console.log('Yes! signup');
-    this.router.navigate(['/sign-up']);
+    this.router.navigate(['sign-up']);
   }
 }

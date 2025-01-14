@@ -1,13 +1,18 @@
 /* Navbar styles */
 .navbar {
-  background-color: white;
+  width: 100%; /* Full width for the navbar */
+  background: linear-gradient(to bottom, #2c3e50, #4ca1af),
+    rgba(255, 255, 255, 0.3); /* Gradient with transparency */
+  color: white; /* White text for contrast */
   border: 2px solid #1f2937; /* border-gray-900 */
-  padding: 1rem 1.5rem; /* Increase padding for larger overall size */
-  border-radius: 0.375rem; /* rounded */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+  padding: 1rem 1.5rem; /* Padding for better size */
+  border-radius: 0.375rem; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* System fonts */
+  backdrop-filter: blur(10px); /* Optional: frosted glass effect */
 }
 
+/* Container for centering navbar content */
 .container {
   display: flex;
   align-items: center;
@@ -17,9 +22,9 @@
 
 /* Center the navbar-brand title */
 .navbar-brand {
-  font-size: 25px; /* Increase text size (2.2rem = 35px) */
-  font-weight: 600; /* Bold font (600 for better visual balance) */
-  color: black;
+  font-size: 25px; /* Increase text size */
+  font-weight: 600; /* Bold font */
+  color: white; /* White color for visibility on the gradient */
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -31,15 +36,16 @@
 .logout-btn {
   background-color: #1f2937; /* bg-gray-950 */
   color: white;
-  border-radius: 0.5rem; /* rounded-lg */
+  border-radius: 0.5rem; /* Rounded corners */
   font-size: 1.1rem; /* Slightly increase text size */
   font-weight: 500; /* Semi-bold for better readability */
   padding: 1rem 2rem; /* Increase button size (larger padding) */
   position: absolute;
   right: 0; /* Align to the right */
   letter-spacing: 0.5px; /* Add slight letter-spacing for better appearance */
+  backdrop-filter: blur(10px); /* Optional: frosted glass effect */
 }
 
 .logout-btn:hover {
-  background-color: #111827; /* darker shade on hover */
+  background-color: #111827; /* Darker shade on hover */
 }

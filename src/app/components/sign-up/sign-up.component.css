@@ -1,43 +1,75 @@
+/* Signup Form Container */
 .signup-form-container {
   width: 300px;
   margin: auto;
+  background: linear-gradient(to bottom, #2c3e50, #4ca1af),
+    rgba(255, 255, 255, 0.3); /* Gradient background with transparency */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
 }
 
+/* Header styling */
 h2 {
   text-align: center;
+  color: white; /* White text for visibility */
 }
 
+/* Form Group */
 .form-group {
   margin-bottom: 15px;
 }
 
+/* Label styling */
 label {
   display: block;
   margin-bottom: 5px;
+  color: white; /* White text for labels */
 }
 
+/* Input fields */
 input {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
 }
 
+input:focus {
+  border-color: #4f92f6; /* Blue color on focus */
+  outline: none;
+}
+
+/* Submit button */
 button {
   width: 100%;
-  padding: 10px;
-  background-color: #007bff;
+  padding: 12px;
+  background-color: #4f92f6; /* Gradient blue button */
   color: white;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+button:hover {
+  background-color: #28a745; /* Darker blue on hover */
+}
+
+/* Disabled button */
 button:disabled {
-  background-color: #ccc;
+  background-color: #357ae8; /* Light gray for disabled button */
 }
 
+/* Error Message */
 .error-message {
-  padding: 1rem; /* 16px */
+  padding: 1rem;
   margin: 1rem 0;
   background-color: #fee2e2; /* Light red */
   color: #b91c1c; /* Dark red */
+  border-radius: 4px;
 }

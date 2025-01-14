@@ -1,0 +1,22 @@
+<div class="user-page">
+  <div class="sidebar">
+    <div class="profile-section">
+      <img src="https://img.freepik.com/free-psd/contact-icon-illustration-isolated_23-2151903337.jpg?semt=ais_hybrid" alt="User Profile" class="profile-logo" />
+      <h2 style="text-transform: uppercase">User Name</h2>
+      <p></p>
+    </div>
+    <div class="divider"></div>
+    <div class="menu">
+      <h3 style="text-align: center">Transactions</h3>
+      <ul>
+        <li>Booking</li>
+        <li>Expense</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <!-- Content goes here -->
+    <router-outlet></router-outlet> <!-- Dynamic content based on route -->
+  </div>
+</div>

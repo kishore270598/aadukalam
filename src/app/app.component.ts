@@ -6,10 +6,11 @@ import { Signupservice } from './services/signup.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { LoginService } from './services/login.service';
+import { LayoutComponent } from './components/layout/layout.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormsModule, HttpClientModule],
+  imports: [RouterOutlet, FormsModule, HttpClientModule, LayoutComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [Signupservice, LoginService],
