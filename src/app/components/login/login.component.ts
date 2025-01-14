@@ -15,7 +15,6 @@ import { HomepageComponent } from '../homepage/homepage.component';
     NgIf,
     FormsModule,
     NavbarComponent,
-    LayoutComponent,
     HomepageComponent,
   ],
   templateUrl: './login.component.html',

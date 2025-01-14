@@ -1,0 +1,82 @@
+.booking-table {
+  padding: 16px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+.booking-table h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #007bff;
+}
+
+.booking-table p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.booking-table table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  background-color: #fff;
+}
+
+.booking-table th,
+.booking-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+.booking-table th {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+
+.booking-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.booking-table tr:hover {
+  background-color: #eaeaea;
+}
+
+.booking-table td {
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+}
+
+/* Button Styles */
+.btn {
+  padding: 8px 12px;
+  font-size: 12px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 2px; /* Spacing between buttons */
+}
+
+.delete-btn {
+  background-color: #dc3545; /* Red for Delete */
+}
+
+.insert-btn {
+  background-color: #28a745; /* Green for Insert */
+}
+
+.update-btn {
+  background-color: #ffc107; /* Yellow for Update */
+}
+
+.btn:hover {
+  opacity: 0.9;
+}

@@ -11,7 +11,6 @@ export const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
-      { path: '', redirectTo: 'home', pathMatch: 'full' }, // Redirect empty path to home
       { path: 'home', component: HomepageComponent },
       { path: 'booking', component: BookingComponentComponent },
       { path: 'expense', component: ExpenseComponentComponent },
